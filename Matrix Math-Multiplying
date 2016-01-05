@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int matARows,
+  matACols,
+  matBRows,
+  matBCols;
+
+float matA[2][2],
+  matB[2][2],
+  matProd[2][2];
+
+int main {
+  matARows = 2;
+  matACols = 2;
+  matBRows = 2;
+  matBCols = 2;
+  for(int i = 0; i < 2; i++) {
+    for(int k = 0; k < 2; k++) {
+      matProd[i][k] = 0;
+    }
+  }
+
+  matA[0][0] = 1;
+  matA[0][1] = 2;
+  matA[1][0] = 3;
+  matA[1][1] = 4;
+
+  matB[0][0] = 5;
+  matB[0][1] = 6;
+  matB[1][0] = 7;
+  matB[1][1] = 8;
+
+  if(matACols == matBRows) {
+    for(int row = 0; row < matARows; row++) {
+      for(int col = 0; col < matBCols; col++) {
+        for(int cell = 0; cell < matACols; cell++) {
+          matProd[row][col] += matA[row][cell] * matB[cell][col];
+        }
+      }
+    }
+    printf("%f, %f\n", matProd[0][0], matProd[0][1]);
+    printf("%f, %f\n", matProd[1][0], matProd[1][1]);
+  }
+
+  else {
+    printf("Error!\n");
+    printf("Incompatible Dimensions!\n");
+  }
+  return 0;
+}
