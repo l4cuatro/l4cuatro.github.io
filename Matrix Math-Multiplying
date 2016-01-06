@@ -7,16 +7,17 @@ int matARows,
 
 float matA[2][2],
   matB[2][2],
-  matProd[2][2];
+  cellProd = 0,
+  matFin[2][2];
 
 int main {
   matARows = 2;
   matACols = 2;
   matBRows = 2;
   matBCols = 2;
-  for(int i = 0; i < 2; i++) {
-    for(int k = 0; k < 2; k++) {
-      matProd[i][k] = 0;
+  for(int i = 0; i < matARows; i++) {
+    for(int k = 0; k < matBCols; k++) {
+      matFin[i][k] = 0;
     }
   }
 
@@ -34,12 +35,14 @@ int main {
     for(int row = 0; row < matARows; row++) {
       for(int col = 0; col < matBCols; col++) {
         for(int cell = 0; cell < matACols; cell++) {
-          matProd[row][col] += matA[row][cell] * matB[cell][col];
+          cellProd += matA[row][cell] * matB[cell][col];
         }
+        matFin[row][col] = cellProd;
+        cellProd = 0;
+        printf("%f  ", matFin[row][col]);
       }
+      printf("\n");
     }
-    printf("%f, %f\n", matProd[0][0], matProd[0][1]);
-    printf("%f, %f\n", matProd[1][0], matProd[1][1]);
   }
 
   else {
