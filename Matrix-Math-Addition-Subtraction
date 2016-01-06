@@ -1,0 +1,72 @@
+int matARows,
+  matBRows,
+  matACols,
+  matBCols;
+float matA[2][2],
+  matB[2][2],
+  matSum[2][2],
+  matDiff[2][2],
+  *matTotal,
+  *matSubtract;
+
+float matrixAdd {
+  matAdd = matSum[0][0];
+  matARows = 2;
+  matBRows = 2;
+  matACols = 2;
+  matBCols = 2;
+  matA[0][0] = 1;
+  matA[0][1] = 2;
+  matA[1][0] = 3;
+  matA[1][1] = 4;
+  matB[0][0] = 5;
+  matB[0][1] = 6;
+  matB[1][0] = 7;
+  matB[1][1] = 8;
+
+  if(matARows == matBRows && matACols == matBCols) {
+    for(int row = 0; row < matARows; row++) {
+      for(int col = 0; col < matACols; col++) {
+        matSum[row][col] = matA[row][col] + matB[row][col];
+        printf("%f  ", matSum[row][col]);
+      }
+      printf("\n");
+    }
+  }
+  else {
+    printf("Error!\n");
+    printf("Incompatible Dimensions!\n");
+  }
+  return matTotal;
+}
+
+float matrixSub {
+  matResult = matSum[0][0];
+  matARows = 2;
+  matBRows = 2;
+  matACols = 2;
+  matBCols = 2;
+  matA[0][0] = 1;
+  matA[0][1] = 2;
+  matA[1][0] = 3;
+  matA[1][1] = 4;
+  matB[0][0] = 5;
+  matB[0][1] = 6;
+  matB[1][0] = 7;
+  matB[1][1] = 8;
+
+  if(matARows == matBRows && matACols == matBCols) {
+    for(int row = 0; row < matARows; row++) {
+      for(int col = 0; col < matACols; col++) {
+        matDiff[row][col] = matA[row][col] - matB[row][col];
+        printf("%f  ", matDiff[row][col]);
+      }
+      printf("\n");
+    }
+  }
+  else {
+    printf("Error!\n");
+    printf("Incompatible Dimensions!\n");
+  }
+  return matSubtract;
+}
