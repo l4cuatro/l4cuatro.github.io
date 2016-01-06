@@ -50,5 +50,5 @@ float matrixMult {
     printf("Error!\n");
     printf("Incompatible Dimensions!\n");
   }
-  return matProd;
+  return matProd; 
 }
