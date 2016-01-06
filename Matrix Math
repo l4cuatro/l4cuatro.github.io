@@ -1,0 +1,111 @@
+#include <stdio.h>
+
+int matARows,
+  matBRows,
+  matACols,
+  matBCols;
+float matA[2][2],
+  matB[2][2],
+  matSum[2][2],
+  matDiff[2][2],
+  cellProd = 0,
+  matFin[2][2];
+
+void matrixMult() {
+  for(int i = 0; i < matARows; i++) {
+    for(int k = 0; k < matBCols; k++) {
+      matFin[i][k] = 0;
+    }
+  }
+  if(matACols == matBRows) {
+    for(int row = 0; row < matARows; row++) {
+      for(int col = 0; col < matBCols; col++) {
+        for(int cell = 0; cell < matACols; cell++) {
+          cellProd += matA[row][cell] * matB[cell][col];
+        }
+        matFin[row][col] = cellProd;
+        cellProd = 0;
+        printf("%f  ", matFin[row][col]);
+      }
+      printf("\n");
+    }
+  }
+
+  else {
+    printf("Error!\n");
+    printf("Incompatible Dimensions!\n");
+  }
+}
+
+void matrixAdd() {
+  if(matARows == matBRows && matACols == matBCols) {
+    for(int row = 0; row < matARows; row++) {
+      for(int col = 0; col < matACols; col++) {
+        matSum[row][col] = matA[row][col] + matB[row][col];
+        printf("%f  ", matSum[row][col]);
+      }
+      printf("\n");
+    }
+  }
+  else {
+    printf("Error!\n");
+    printf("Incompatible Dimensions!\n");
+  }
+}
+
+void matrixSub() {
+  if(matARows == matBRows && matACols == matBCols) {
+    for(int row = 0; row < matARows; row++) {
+      for(int col = 0; col < matACols; col++) {
+        matDiff[row][col] = matA[row][col] - matB[row][col];
+        printf("%f  ", matDiff[row][col]);
+      }
+      printf("\n");
+    }
+  }
+  else {
+    printf("Error!\n");
+    printf("Incompatible Dimensions!\n");
+  }
+}
+
+int main() {
+  matARows = 2;
+  matBRows = 2;
+  matACols = 2;
+  matBCols = 2;
+  matB[0][0] = 1;
+  matB[0][1] = 2;
+  matB[1][0] = 3;
+  matB[1][1] = 4;
+  matA[0][0] = 5;
+  matA[0][1] = 6;
+  matA[1][0] = 7;
+  matA[1][1] = 8;
+  
+  printf("First Matrix\n");
+  for(int row = 0; row < matARows; row++) {
+	  for(int col = 0; col < matACols; col++) {
+	    printf("%f   ", matA[row][col]);
+      }
+	  printf("\n");
+  }
+
+  printf("\n");
+  printf("Second Matrix\n");
+  for(int row = 0; row < matBRows; row++) {
+	  for(int col = 0; col < matBCols; col++) {
+	    printf("%f   ", matB[row][col]);
+      }
+	  printf("\n");
+  }
+  printf("\n");
+  printf("Addition:\n");
+  matrixAdd();
+  printf("\n");
+  printf("Subtraction:\n");
+  matrixSub();
+  printf("\n");
+  printf("Multiplication:\n");
+  matrixMult();
+}
