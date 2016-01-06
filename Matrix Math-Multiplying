@@ -8,9 +8,10 @@ int matARows,
 float matA[2][2],
   matB[2][2],
   cellProd = 0,
-  matFin[2][2];
+  matFin[2][2],
+  *matProd;
 
-int main {
+float matrixMult {
   matARows = 2;
   matACols = 2;
   matBRows = 2;
@@ -49,5 +50,5 @@ int main {
     printf("Error!\n");
     printf("Incompatible Dimensions!\n");
   }
-  return 0;
+  return matProd;
 }
