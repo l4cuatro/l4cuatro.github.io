@@ -11,14 +11,23 @@ float kP = .1,
   
 int timeNow,
   timeLast;
-  
+
+//This returns a float value, so you can see the result of the calculation  
 float pidControl(float targ) {
   current = SensorValue[enc];
   time = nSysTime;
   error = targ - current;
-  prop = error * kP;
-  integ += error * kI;
-  deriv = (error - errorLast) / (time - timeLast);
+  prop = error * kP; //Easiest to undrstand, just the error multiplied by a constant decimal value
+  integ += error * kI; //The total of all error for the duration of the program
+  //Clamp integral to the maximum power of the motors to prevent integral windup and keep the program responsive
+  if(integ > 127) {
+    integ = 127;
+  }
+  else if(integ < -127) {
+    integ = -127;
+  }
+  deriv = (error - errorLast) / (time - timeLast); //rate of change of the error divided by time
+  //If you graph the error values, this will be the slop of your line/curve (calculus derivative)
   errorLast = error;
   timeLast = time;
   return prop + integ + deriv;
@@ -28,3 +37,6 @@ task main() {
   target = 100;
   while(true) {
     printf("Result: %f\n", pidControl(target));
+    wait1Msec(20);
+  }
+}
