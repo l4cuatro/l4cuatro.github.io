@@ -1,0 +1,47 @@
+//Conditional Statements and Loops
+/*
+Types
+while(condition) repeats loop until condition is false
+
+for(var; condition; var++) repeats loop until condition is false
+  basically a shorthand while loop
+
+if(condition) enters loop if condition true, exits after reaching last line
+  generally the most useful, since you can do other stuff for different conditions
+
+else if(condition) enters loop if above if condition and all above else if conditions are false
+  must be used in conjunction with an if statement
+
+else enters loop if the if condition and all related else if conditions are false
+*/ 
+
+/*Examples (still won't compile, there's no task main)
+while(true) { 
+//code goes here
+} //this loop never ends, it's one of the most common conditions for our purposes
+
+for(int i = 0; i < 5; i++) {
+//do something
+} //i is allowed to be used at any time inside the for loop
+//use a for loop for anything that has a known number of iterations, like assigning a value to members of an array
+
+for(i = 0; i < 5; i++) {
+  foo[i] = val;
+} //all members have the same value in this, but you can use an operator to fix that
+for(i = 0; i < 5; i++) {
+  foo[i] = val * i;
+}  //Now the value of a given member of array foo is the value of (i * val), which changes for each member
+*/
+
+//This will compile, it's an example of a for loop and an if-else if-else block
+
+int foo[5]; //Declares an array with 5 int members
+const int k = 25; //const prefix makes a variable a constant, so it cannot be changed
+
+task main() {
+  for(int i = 0; i < 5; i++) {
+    foo[i] = k * i;
+    printf("Member #%f: %f\n" i+1, foo[i]); //show the member of the array, and its value
+//we will go over this function later, but it basically displays a string on the screen
+  }
+}
