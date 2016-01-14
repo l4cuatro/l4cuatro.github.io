@@ -1,0 +1,30 @@
+float kP = .1,
+  kI = .001,
+  kD = .01,
+  prop,
+  integ = 0,
+  deriv,
+  error,
+  errorLast = 0,
+  target,
+  current;
+  
+int timeNow,
+  timeLast;
+  
+float pidControl(float targ) {
+  current = SensorValue[enc];
+  time = nSysTime;
+  error = targ - current;
+  prop = error * kP;
+  integ += error * kI;
+  deriv = (error - errorLast) / (time - timeLast);
+  errorLast = error;
+  timeLast = time;
+  return prop + integ + deriv;
+}
+  
+task main() {
+  target = 100;
+  while(true) {
+    printf("Result: %f\n", pidControl(target));
