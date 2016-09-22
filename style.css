@@ -2,8 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:100,400,700);
 
 :root {
-  background-color: 663300;
-  color: FFFF00;
+  background-color: rgba(.4, .4, 0, 1);
+  color: rgba(1, 1, 0, .85);
 }
 
 h1, h2, h3, h4, h5, h6 {
