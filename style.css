@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:100,400,700);
 @import url(https://fonts.googleapis.com/css?family=Oswald:100,400,700);
 
+:root {
+  background-color: 663300;
+  color: FFFF00;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
