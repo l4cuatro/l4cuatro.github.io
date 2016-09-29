@@ -19,5 +19,5 @@ h1, h2, h3, h4, h5, h6 {
 p, ul, ol, ul li, ol li, a {
   font-family: Oswald, sans-serif;
   font-size: 16px;
-  color: rgba(1, 1, 0, .5);
+  color: rgba(1, 1, 0, .85);
 }
