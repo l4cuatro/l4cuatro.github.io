@@ -2,12 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:100,400,700);
 
 :root {
-  background-color: rgba(.4, .4, 0, 1);
-  color: rgba(1, 1, 0, .85);
+  background-color: #666600;
+  color: #ffff00;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, ul li, ol li, table, th, td, tr, a {
-  background-color: #666600;
+  background-color: #993300;
   color: #ffff00;
 }
 
@@ -19,5 +19,4 @@ h1, h2, h3, h4, h5, h6 {
 p, ul, ol, ul li, ol li, a {
   font-family: Oswald, sans-serif;
   font-size: 24px;
-  color: #ffff00;
 }
